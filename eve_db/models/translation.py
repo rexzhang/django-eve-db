@@ -3,7 +3,6 @@ Translation-related models.
 """
 from django.db import models
 
-from eve_db.eve_db_settings import *
 
 class TrnTranslations(models.Model):
     """
