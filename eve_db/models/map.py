@@ -366,3 +366,25 @@ class MapLandmark(models.Model):
 
     def __str__(self):
         return self.__unicode__()
+
+class MapLocationWormholeClasses(models.Model):
+    """
+    wormhole classes list.
+
+    CCP Table: mapLocationWormholeClasses
+    CCP Primary key: "locationID" int(11)
+    """
+    location = models.ForeignKey('MapDenormalize', unique=True, primary_key=True)
+    wormhole_class = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        app_label = 'eve_db'
+        ordering = ['location']
+        verbose_name = 'LocationWormhole'
+        verbose_name_plural = 'Wormhole class of Location'
+
+    def __unicode__(self):
+        return "%s -> %s" % (self.location, self.wormhole_class)
+
+    def __str__(self):
+        return self.__unicode__()

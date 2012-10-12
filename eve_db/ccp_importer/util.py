@@ -74,7 +74,9 @@ IMPORT_LIST = [
     Importer_ramTypeRequirements,
     Importer_planetSchematics,
     Importer_planetSchematicsPinMap,
-    Importer_planetSchematicsTypeMap
+    Importer_planetSchematicsTypeMap,
+    Importer_mapLocationWormholeClasses,
+    Importer_trnTranslations,
 ]
 
 def order_importers(importer_classes):

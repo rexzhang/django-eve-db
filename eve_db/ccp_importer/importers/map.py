@@ -183,3 +183,10 @@ class Importer_mapCelestialStatistics(SQLImporter):
                  ('mass', 'mass'),
                  ('is_locked', 'locked', parse_int_bool),
                  ('is_fragmented', 'fragmented', parse_int_bool))
+
+
+class Importer_mapLocationWormholeClasses(SQLImporter):
+    DEPENDENCIES = ['mapDenormalize']
+    model = map_models.MapLocationWormholeClasses
+    pks = (('location', 'locationID'),)
+    field_map = (('wormhole_class', 'wormholeClassID'),)
