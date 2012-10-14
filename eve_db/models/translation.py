@@ -11,7 +11,6 @@ class TrnTranslations(models.Model):
     """
     tc_id = models.IntegerField()
     key_id = models.IntegerField()
-    #language_id = models.CharField(max_length=50)
     language = models.CharField(max_length=50)
     text = models.TextField()
 
@@ -23,7 +22,6 @@ class TrnTranslations(models.Model):
         unique_together = ('tc_id', 'key_id', 'language')
 
     def __unicode__(self):
-        #return self.text
         return '%d %d %s: ' % (self.tc_id, self.key_id, self.language, self.text)
 
     def __str__(self):
